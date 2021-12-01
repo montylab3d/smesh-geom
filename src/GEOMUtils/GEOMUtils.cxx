@@ -93,7 +93,7 @@
 #include <sstream>
 #include <algorithm>
 
-#include <V3d_Coordinate.hxx>
+#include <Standard_Real.hxx>
 
 #include <Standard_Failure.hxx>
 #include <Standard_NullObject.hxx>
@@ -1027,7 +1027,7 @@ Standard_Real GEOMUtils::GetMinDistance
 //=======================================================================
 gp_Pnt GEOMUtils::ConvertClickToPoint( int x, int y, Handle(V3d_View) aView )
 {
-  V3d_Coordinate XEye, YEye, ZEye, XAt, YAt, ZAt;
+  Standard_Real XEye, YEye, ZEye, XAt, YAt, ZAt;
   aView->Eye( XEye, YEye, ZEye );
 
   aView->At( XAt, YAt, ZAt );
