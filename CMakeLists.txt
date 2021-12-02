@@ -6,8 +6,18 @@ target_include_directories(Geom PUBLIC
 )
 
 if(WIN32)
-    set_target_properties(Geom PROPERTIES COMPILE_FLAGS "-DUTILS_EXPORTS")
+  set_target_properties(Geom PROPERTIES COMPILE_FLAGS
+    "-DUTILS_EXPORTS \
+     -DSMESH_ONLY \
+     -DSALOME_LIGHT \
+     -DSALOME_LIGHT_ONLY")
+else()
+  set_target_properties(Geom PROPERTIES COMPILE_FLAGS
+    "-DSMESH_ONLY \
+     -DSALOME_LIGHT \
+     -DSALOME_LIGHT_ONLY")
 endif()
+set(CMAKE_VERBOSE_MAKEFILE ON)
 
 install(FILES ${Geom_SRC_DIR}/GEOMUtils/GEOMUtils.hxx DESTINATION "include/smesh/Geom")
 
